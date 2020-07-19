@@ -1,0 +1,18 @@
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }
+
+.box-boder-title{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: oblique;
+  margin-right: 20px;
+}
+
+.box-border{
+  margin-bottom: 20px;
+}
+
+.form-transacoes{
+  margin-left: 50px;
+}

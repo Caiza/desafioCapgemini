@@ -1,0 +1,63 @@
+package br.com.estudo.dto;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import br.com.estudo.model.Cliente;
+import br.com.estudo.model.Conta;
+import br.com.estudo.model.Status;
+
+public class ClienteDTO {
+
+	private long id;
+	private String nome;
+	private long cpf;
+	private LocalDateTime dataNascimento;
+	private long telefone;
+	private Status status;
+	private Conta conta;
+
+	public ClienteDTO(Cliente cliente) {
+		this.id = cliente.getId();
+		this.nome = cliente.getNome();
+		this.cpf = cliente.getCpf();
+		this.dataNascimento = cliente.getDataNascimento();
+		this.telefone = cliente.getTelefone();
+		this.status = cliente.getStatus();
+		this.conta = cliente.getConta();
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public long getCpf() {
+		return cpf;
+	}
+
+	public LocalDateTime getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public long getTelefone() {
+		return telefone;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public Conta getConta() {
+		return conta;
+	}
+
+	public static List<ClienteDTO> converter(List<Cliente> clientes){
+		return clientes.stream().map(ClienteDTO::new).collect(Collectors.toList());
+	}
+
+}

@@ -1,0 +1,18 @@
+<h2 fxLayoutAlign="center"> Escolha seu valor de Crédito</h2>&nbsp;
+<form [formGroup]="form" fxLayoutAlign="center" novalidate>
+  
+    <mat-list>
+        <mat-list-item fxLayoutAlign="center">
+            <mat-slider thumbLabel [displayWith]="formatLabel" tickInterval="auto" min="1" max="100000"></mat-slider>
+        </mat-list-item> &nbsp;
+
+        <mat-list-item fxLayoutAlign="center">
+            <button mat-raised-button color="primary"  (click)="enviar()">
+                Enviar
+            </button>
+            &nbsp;
+            <a mat-raised-button routerLink="/cliente">Voltar</a>
+        </mat-list-item>
+
+    </mat-list>
+</form>

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: 'serasa'
+  profiles:
+    active:
+    - default
+  cloud:
+    config:
+      uri: http://localhost:8888
+  boot:
+    admin:
+      client:
+        url:
+        - http://localhost:8081

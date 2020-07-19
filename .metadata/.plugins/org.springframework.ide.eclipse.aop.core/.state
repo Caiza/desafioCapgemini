@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="oauth"/>
+<aop-project name="projeto-monitoramento"/>
+<aop-project name="zuul"/>
+<aop-project name="config-server"/>
+<aop-project name="eureka-server"/>
+<aop-project name="banco"/>
+<aop-project name="serasa"/>
+</aop-reference-model>

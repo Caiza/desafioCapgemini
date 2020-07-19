@@ -1,0 +1,25 @@
+<mat-table mat-table  [dataSource]="dataSource" matSort>
+     <mat-header-row *matHeaderRowDef="colunas"></mat-header-row>
+     <mat-row *matRowDef="let row; columns: colunas;"></mat-row>
+
+    <ng-container matColumnDef="data">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>
+            Data
+        </mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let extrato">
+            {{extrato.data}}
+        </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="valor">
+        <mat-header-cell mat-header-cell *matHeaderCellDef>
+            Valor
+        </mat-header-cell>
+        <mat-cell mat-cell *matCellDef="let extrato">
+            {{extrato.valor}}
+        </mat-cell>
+    </ng-container>
+</mat-table> 
+
+<button mat-raised-button color="primary" routerLink="/cliente">
+    <mat-icon>assignment_return</mat-icon> Voltar
+</button>

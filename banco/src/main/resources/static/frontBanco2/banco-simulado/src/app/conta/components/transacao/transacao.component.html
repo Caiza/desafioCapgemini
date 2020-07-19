@@ -1,0 +1,64 @@
+<div class="box box-primary">
+    <form [formGroup]="form" (ngSubmit)="salvar()" fxLayoutAlign="center" novalidate>
+        <div class="box-body">
+
+            <mat-list>
+                <fieldset class="box-border">
+                    <legend class="box-boder-title">Transações:</legend>
+                    <mat-radio-group class="radio input-group" (change)="tipoTransacao($event)" required>
+                        <mat-radio-button *ngFor="let item of transacoes" value="{{item.valor}}">{{item.desc}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </fieldset>
+
+                <fieldset class="box-border" *ngIf="!isDestinatario">
+                    <legend class="box-boder-title">Destinatário</legend>
+                    <mat-radio-group class="radio input-group" (change)="tipoDestinatario($event)" required>
+                        <mat-radio-button *ngFor="let item of destinatarios" value="{{item.valor}}">{{item.desc}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </fieldset>
+
+                <div *ngIf="isFormHabilitar">
+                    <mat-list-item fxLayoutAlign="center">
+                        <mat-form-field>
+                            <input matInput placeholder="Nome" formControlName="nome" required>
+                        </mat-form-field>
+                    </mat-list-item>
+
+                    <mat-list-item fxLayoutAlign="center">
+                        <mat-form-field>
+                            <input matInput placeholder="CPF" formControlName="cpf" mascara="999.999.999.-99" required>
+                        </mat-form-field>
+                    </mat-list-item>
+
+                    <mat-list-item fxLayoutAlign="center">
+                        <mat-form-field>
+                            <input matInput placeholder="Conta" formControlName="conta" required>
+                        </mat-form-field>
+                    </mat-list-item>
+
+                    <mat-list-item fxLayoutAlign="center">
+                        <mat-form-field>
+                            <input matInput placeholder="Agência" formControlName="agencia" required>
+                        </mat-form-field>
+                    </mat-list-item>
+                </div>
+                <mat-list-item fxLayoutAlign="center">
+                    <mat-form-field>
+                        <input matInput placeholder="Valor" formControlName="valor" required>
+                    </mat-form-field>
+                </mat-list-item>
+
+                <mat-list-item fxLayoutAlign="center">
+                    <button mat-raised-button color="primary">
+                        OK
+                    </button>&nbsp;
+                    <button mat-raised-button color="primary" routerLink="/cliente">
+                        Voltar
+                    </button>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </form>
+</div>
